@@ -36,7 +36,26 @@ $(document).ready(function() {
       const userAvatar = $tweet.user.avatar;
       const tweetText = $tweet.content.text;
       const tweetTime = timeago.format($tweet.created_at);
-      const completeTweet = $(`<article class="tweet"><header id="tweetheader"><div><img src="${userAvatar}"><p>${userName}</p></div><p>${userHandle}</p></header><div id="tweet-content"><p>${tweetText}</p></div><footer id="tweet-footer"><p>${tweetTime}</p><div class="tweet-icons"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></div></footer></article>`);
+      const completeTweet = $(`
+        <article>
+          <header id="tweetheader">
+            <div>
+              <img src="${userAvatar}">
+              <p>${userName}</p>
+            </div>
+            <p>${userHandle}</p>
+          </header>
+          <p><strong>${tweetText}</strong></p>
+          <footer id="tweet-footer">
+            <p>${tweetTime}</p>
+              <div class="tweet-icons">
+                <i class="fa-solid fa-flag"></i>
+                <i class="fa-solid fa-retweet"></i>
+                <i class="fa-solid fa-heart"></i>
+              </div>
+          </footer>
+          </article>
+       `);
       return completeTweet;
     };
 
@@ -54,7 +73,13 @@ $(document).ready(function() {
 
   renderTweets(data);
 
-  // timeago.format(1473245023718);
+  //event listener on form submit
+  $("form").submit(function( event ) {
+    event.preventDefault();
+    $.post('/tweets', $("form").serialize()).then( {
+
+    });
+  });
 
 });
 
