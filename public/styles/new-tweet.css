@@ -1,0 +1,43 @@
+
+/* whole section for posting tweets */
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* the button itself */
+.tweetButton {
+  background-color: #4056A1;
+  color: white;
+  font-size: 16px;
+  font-family: 'Bungee', cursive, sans-serif;
+  padding: 0.5em;
+  
+}
+/* the character counter  */
+.counter {
+  font-family: 'Bungee', cursive, sans-serif;
+}
+.overage{
+  color:red;
+}
+
+.buttonCounter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* the box for text input  */
+#tweet-text { 
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: black;
+  border-bottom-width: 2px;
+  background-color: transparent;
+  margin-bottom: 10px;  
+  width: 700px;
+}
+

@@ -1,0 +1,41 @@
+/*
+120 pixels in height
+Full width of the viewport
+#4056A1 as its default background colour
+#FFFFFF as its default font colour
+<span> within the <nav> uses Bungee as its default font-family
+1.5ems of space on the right and left between the content and the edges
+*/
+
+nav {
+  height: 80px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0em, 1.5em;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  line-height: 0em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+nav span {
+  padding: 1.5em;
+  font-family: 'Bungee', cursive, sans-serif;
+}
+.newTweetHeader {
+  justify-content: flex-end;
+  margin-right: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.fa-angles-down {
+  padding: 0;
+  margin-bottom: 1em;
+}

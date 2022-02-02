@@ -7,23 +7,80 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
+    <!-- Font Families -->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-list.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+      <div class="newTweetHeader">
+        <p><strong>Write</strong> a new Tweet!</p> 
+        <i class="fa-solid fa-angles-down" style="color:red"></i>
+      </div>
     </nav>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <header>
+      <div class="avatar">
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div class="user">
+          <h2>MY NAME</h2>
+      </div>
+  </header>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets/">
+          <!-- <label for="tweet-text"></label> -->
+          <textarea name="text" id="tweet-text" type="text" placeholder="What are you humming about?"></textarea>
+          <div class="buttonCounter">
+            <button class="tweetButton" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <article>
+        <section class="posted-tweet">
+        <header id="tweetheader">
+          <div>
+            <i class="fa-solid fa-user-astronaut"></i>
+            <p>User's Name</p>
+          </div>
+          <p>@userhandle</p>
+        </header>
+        <div id="tweet-content">
+          <p>THIS IS A TWEET SOMEONE POSTED</p>
+        </div>
+        <footer id="tweet-footer">
+          <p>10 days ago</p>
+          <div class="tweet-icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </section>
+      <!-- get initial tweets here  -->
+      </article>
+    </main>
   </body>
 </html>

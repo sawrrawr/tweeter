@@ -3,22 +3,60 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+ 
+ html {
+   box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  /*
+  * Global layout stuff
+  */
+  header {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    background-color: goldenrod;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    z-index: 0;
+    position: relative;
+    line-height: 0em;
+    background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+  }
 
-/*
- * Global layout stuff
- */
+  .avatar {
+    align-items: center;
+    margin-top: 150px; 
+  }
 
-body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-}
+  .user {
+    margin-top: 0px;
+  }
+
+  main {
+    display: flex;  
+    width: 90%;
+    background-color: #f4f1ec;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 500px;
+  }
+  
+  body {
+    color: #545149;
+    background-color: #f4f1ec;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 24px;
+  }
+  
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

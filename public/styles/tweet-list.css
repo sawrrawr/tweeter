@@ -1,0 +1,49 @@
+.posted-tweet {
+  display: inherit;
+  flex-direction: column;
+  border: 2px;
+  margin-top: 50px;
+  width: 700px;
+}
+
+.posted-tweet :hover {
+  box-shadow: 5px 5px 5px grey;;
+}
+
+#tweetheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: inherit;
+  height: auto;
+  background-color: inherit;
+  background-image: none;
+}
+
+.tweet-icons {
+  display: inherit;
+  color: #4056A1;
+  align-self: center;
+}
+
+.tweet-icons i {
+  margin: 0px 5px;
+}
+
+.tweet-icons :hover {
+  color: goldenrod;
+}
+#tweet-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-top-color: black;
+  border-top-width: 2px;
+}
+
