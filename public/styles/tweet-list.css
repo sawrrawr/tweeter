@@ -1,24 +1,40 @@
-.posted-tweet {
+article {
   display: inherit;
   flex-direction: column;
-  border: 2px;
+  border: solid 2px;
   margin-top: 50px;
   width: 700px;
+  padding: 10px;
 }
 
-.posted-tweet :hover {
-  box-shadow: 5px 5px 5px grey;;
+article:hover {
+  box-shadow: 5px 5px 5px grey;
+}
+
+article > p {
+  margin: 25px 15px;
 }
 
 #tweetheader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   width: inherit;
   height: auto;
   background-color: inherit;
   background-image: none;
+  margin: 5px;
+  font-size: 22px;
+}
+
+header > div {
+  display: flex;
+}
+
+header > p {
+  margin-right: 30px;
+  color: lightgrey
 }
 
 .tweet-icons {
@@ -39,11 +55,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  font-size: 16px;
   margin: 0px;
   border-bottom: none;
   border-left: none;
   border-right: none;
   border-top-color: black;
-  border-top-width: 2px;
+  border-top: solid 2px;
 }
 
