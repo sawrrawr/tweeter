@@ -6,6 +6,11 @@
 $(document).ready(function() {
 
     const createTweetElement = function($tweet) {
+      const escape = function (str) {
+        let div = document.createElement("div");
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      };
       const userHandle = $tweet.user.handle;
       const userName = $tweet.user.name;
       const userAvatar = $tweet.user.avatars;
@@ -15,12 +20,12 @@ $(document).ready(function() {
         <article>
           <header id="tweetheader">
             <div>
-              <img src="${userAvatar}">
+              <img id="otherAvatar" src="${userAvatar}">
               <p>${userName}</p>
             </div>
             <p>${userHandle}</p>
           </header>
-          <p><strong>${tweetText}</strong></p>
+          <p><strong>${escape(tweetText)}</strong></p>
           <footer id="tweet-footer">
             <p>${tweetTime}</p>
               <div class="tweet-icons">
@@ -45,23 +50,26 @@ $(document).ready(function() {
   //event listener on form submit
   $("form").submit(function( event ) {
     event.preventDefault();
-    const result = $("form").serialize()
-    if (!result) {
+    const tweetText = $("form").serialize()
+    if (tweetText.length <= 5) {
       alert(`This is an empty tweet!`)
-    } else if (result.length > 145) {
+    } else if (tweetText.length > 145) {
       alert(`Your tweet needs to be less than 140 characters. Try again!`);
     } else {
-    $.post('/tweets', result).then(function() {
- console.log('success', result);
-    });
-    $("form").empty();
-    loadTweets();
+
+      //AJAX request
+    $.post('/tweets', tweetText).then(function() {
+      console.log('success', tweetText);
+      $("textarea").val("");
+      loadTweets();
+});
   }
   });
 
   const loadTweets = function() {
+    $('#tweets-container').empty();
     $.get('/tweets').then(function(data) {
-      renderTweets(data);
+      renderTweets(data.reverse());
     })
   };
   loadTweets();
