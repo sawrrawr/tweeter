@@ -14,28 +14,7 @@
   /*
   * Global layout stuff
   */
-  header {
-    display: flex;
-    height: 400px;
-    width: 100%;
-    background-color: goldenrod;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
-    z-index: 0;
-    position: relative;
-    line-height: 0em;
-    background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
-  }
-
-  .avatar {
-    align-items: center;
-    margin-top: 150px; 
-  }
-
-  .user {
-    margin-top: 0px;
-  }
+  
 
   main {
     display: flex;  

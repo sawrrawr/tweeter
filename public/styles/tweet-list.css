@@ -13,6 +13,7 @@ article:hover {
 
 article > p {
   margin: 25px 15px;
+  font-size: 22px;
 }
 
 #tweetheader {
@@ -30,6 +31,7 @@ article > p {
 
 header > div {
   display: flex;
+  font-size: 20px;
 }
 
 header > p {
@@ -64,3 +66,9 @@ header > p {
   border-top: solid 2px;
 }
 
+
+#otherAvatar {
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+}
