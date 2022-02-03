@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet-list.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/errors.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -49,6 +50,14 @@
       </div>
   </header>
     <main class="container">
+      <section class="errors">
+        <div class="empty-tweet-error">
+          <p><strong><i class="fa-solid fa-circle-exclamation"></i>&emsp;Your tweet is empty!&emsp;<i class="fa-solid fa-circle-exclamation"></i></strong></p>
+        </div>
+        <div class="char-limit-error">
+          <p><strong><i class="fa-solid fa-circle-exclamation"></i>&emsp;Tweets must be less than 140 characters. Get to editing!&emsp;<i class="fa-solid fa-circle-exclamation"></i></strong></p>
+        </div>
+      </section>
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">

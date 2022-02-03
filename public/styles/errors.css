@@ -1,0 +1,23 @@
+.empty-tweet-error {
+  border: solid 5px;
+  border-color: crimson;
+  color: crimson;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.char-limit-error {
+  border: solid 5px;
+  border-color: crimson;
+  color: crimson;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}

@@ -5,6 +5,9 @@
  */
 $(document).ready(function() {
 
+  $(".empty-tweet-error").hide();
+  $(".char-limit-error").hide();
+
     const createTweetElement = function($tweet) {
       const escape = function (str) {
         let div = document.createElement("div");
@@ -52,15 +55,18 @@ $(document).ready(function() {
     event.preventDefault();
     const tweetText = $("form").serialize()
     if (tweetText.length <= 5) {
-      alert(`This is an empty tweet!`)
+      $(".char-limit-error").hide();
+      $(".empty-tweet-error").slideToggle()
     } else if (tweetText.length > 145) {
-      alert(`Your tweet needs to be less than 140 characters. Try again!`);
+      $(".empty-tweet-error").hide();
+      $(".char-limit-error").slideToggle()
     } else {
-
-      //AJAX request
+      $(".empty-tweet-error").hide()
+      $(".char-limit-error").hide();
     $.post('/tweets', tweetText).then(function() {
       console.log('success', tweetText);
       $("textarea").val("");
+      $(".counter").val(140);
       loadTweets();
 });
   }

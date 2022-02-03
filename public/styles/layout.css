@@ -35,6 +35,35 @@
     font-size: 24px;
   }
   
+/* responsive design params  */
+
+/* tablet size */
+  @media screen and (min-width: 768px) {
+    nav {
+      background-color: transparent;
+    }
+    
+  }
+
+  /* desktop size */
+  @media screen and (min-width: 1024px) {
+    body {
+      display: flex;
+      flex-flow: row wrap;
+    }
+    nav {
+      background-color: #4056A1;
+      width: 100%;
+    }
+    header {
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+    }
+    .container {
+      width: 70%;
+    }
+  }
 
 
 /*
