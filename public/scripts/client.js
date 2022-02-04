@@ -8,37 +8,39 @@ $(document).ready(function() {
   $(".empty-tweet-error").hide();
   $(".char-limit-error").hide();
 
-    const createTweetElement = function($tweet) {
-      const escape = function (str) {
-        let div = document.createElement("div");
-        div.appendChild(document.createTextNode(str));
-        return div.innerHTML;
-      };
-      const userHandle = $tweet.user.handle;
-      const userName = $tweet.user.name;
-      const userAvatar = $tweet.user.avatars;
-      const tweetText = $tweet.content.text;
-      const tweetTime = timeago.format($tweet.created_at);
-      const completeTweet = $(`
-        <article>
-          <header id="tweetheader">
-            <div>
-              <img id="otherAvatar" src="${userAvatar}">
-              <p>${userName}</p>
-            </div>
-            <p>${userHandle}</p>
-          </header>
-          <p><strong>${escape(tweetText)}</strong></p>
-          <footer id="tweet-footer">
-            <p>${tweetTime}</p>
-              <div class="tweet-icons">
-                <i class="fa-solid fa-flag"></i>
-                <i class="fa-solid fa-retweet"></i>
-                <i class="fa-solid fa-heart"></i>
-              </div>
-          </footer>
-          </article>
-       `);
+
+// creates the html 'article' from a submitted tweet
+  const createTweetElement = function($tweet) {
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+    const userHandle = $tweet.user.handle;
+    const userName = $tweet.user.name;
+    const userAvatar = $tweet.user.avatars;
+    const tweetText = $tweet.content.text;
+    const tweetTime = timeago.format($tweet.created_at);
+    const completeTweet = $(`
+      <article>
+        <header id="tweetheader">
+          <div>
+            <img id="otherAvatar" src="${userAvatar}">
+            <p>${userName}</p>
+          </div>
+          <p>${userHandle}</p>
+        </header>
+        <p><strong>${escape(tweetText)}</strong></p>
+        <footer id="tweet-footer">
+          <p>${tweetTime}</p>
+          <div class="tweet-icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+     `);
       return completeTweet;
     };
 
@@ -63,21 +65,23 @@ $(document).ready(function() {
     } else {
       $(".empty-tweet-error").hide()
       $(".char-limit-error").hide();
-    $.post('/tweets', tweetText).then(function() {
-      console.log('success', tweetText);
-      $("textarea").val("");
-      $(".counter").val(140);
-      loadTweets();
-});
-  }
+      $.post('/tweets', tweetText).then(function() {
+        console.log('success', tweetText);
+        $("textarea").val("");
+        $(".counter").val(140);
+        loadTweets();
+      });
+    } 
   });
 
+  //loads the tweets in order from newest to oldest
   const loadTweets = function() {
     $('#tweets-container').empty();
     $.get('/tweets').then(function(data) {
       renderTweets(data.reverse());
     })
   };
+  
   loadTweets();
 
 });

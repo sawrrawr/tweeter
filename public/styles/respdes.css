@@ -1,0 +1,56 @@
+/* responsive design params  */
+
+
+/* mobile/tablet size */
+@media screen and (max-width: 1023px) {
+  nav {
+    background-color: transparent; 
+  }
+
+  nav > p {
+    margin-top: 20px;
+    padding-top: 25px;
+  }
+
+}
+
+/* desktop size */
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  body > div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  nav {
+    background-color: #4056A1;
+    width: 100%;
+  }
+  header {
+    margin-top: 150px;
+    margin-left: 5%;
+    width: 35%;
+    height: 350px;
+    align-items: center;
+    align-self: flex-start;
+  }
+  .avatar {
+    padding: 0px 100px;
+  }
+  main {
+    display: flex;
+    margin-top: 150px;
+    width: 50%;
+    align-self: flex-end;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  article {
+    word-break: break-word;
+  }
+  
+}

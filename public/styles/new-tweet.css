@@ -29,6 +29,7 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
 /* the box for text input  */
 #tweet-text { 
   border-top: none;
@@ -38,6 +39,10 @@
   border-bottom-width: 2px;
   background-color: transparent;
   margin-bottom: 10px;  
-  width: 700px;
+  width: 100%;
+}
+
+form {
+  width: 100%;
 }
 
